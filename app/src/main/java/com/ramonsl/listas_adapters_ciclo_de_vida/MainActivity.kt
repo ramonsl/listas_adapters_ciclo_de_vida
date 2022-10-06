@@ -28,9 +28,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun add(){
-        var edtProduto = findViewById<EditText>(R.id.edtProduto)
-        var edtQtd =findViewById<EditText>(R.id.edtQtd)
-        var edtPreco =findViewById<EditText>(R.id.edtPreco)
+        val edtProduto = findViewById<EditText>(R.id.edtProduto)
+        val edtQtd =findViewById<EditText>(R.id.edtQtd)
+        val edtPreco =findViewById<EditText>(R.id.edtPreco)
         if(edtProduto.text.toString().length>3){
             val produto= Produto(edtProduto.text.toString(),edtPreco.text.toString().toDouble(),edtQtd.text.toString().toInt())
             lista.add(produto)
@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
             edtQtd.text.clear()
             initRecyclerView()
         }else{
+
             Toast.makeText(applicationContext,"Texto Curto",Toast.LENGTH_SHORT).show()
         }
 
